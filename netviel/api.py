@@ -120,7 +120,7 @@ def create_app():
             f = io.StringIO(d["content"])
         else:
             f = io.BytesIO(d["content"])
-        return send_file(f, mimetype=d["content_type"], as_attachment=True,
+        return send_file(f, mimetype=d["content_type"], as_attachment=False,
             download_name=d["filename"])
 
     @app.route("/api/message/<string:message_id>")
